@@ -11,7 +11,7 @@ printName(admin);
 const printOut = (person) => {
     return `Printing out name: ${person.first} ${person.last}`;
 };
-printOut({ first: 'my', last: 'last', age: 10 }); //typescript will throw an error on this because it is direct assignment of object object as params
+//printOut({ first: 'my', last: 'last', age: 10 })//typescript will throw an error on this because it is direct assignment of object object as params
 const singer = { first: 'lady', last: 'gaga', age: 45 };
 printOut(singer); // TypeScript does NOT complain here because singer is a separate variable and has proerty of first and last
 const user = {
