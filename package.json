@@ -1,0 +1,15 @@
+{
+  "name": "ts-bootcamp",
+  "version": "1.0.0",
+  "description": "This is a TypeScript project, following best practices for setting up a structured and scalable development environment. It includes TypeScript compilation, live server integration, automatic code watching, and proper file organization to ensure efficient coding workflows. This setup helps developers write safer and more maintainable JavaScript, leveraging TypeScript's static typing and improved tooling.",
+  "main": "index.js",
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
