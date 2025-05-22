@@ -10,3 +10,4 @@ Start by cloning the project:
 ```bash
 git clone https://github.com/alonzojoe/ts-bootcamp.git
 cd ts-bootcamp
+```
