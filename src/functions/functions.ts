@@ -42,3 +42,10 @@ const neverStop = () => {
 const throwError = (msg: string) => {
     throw new Error(msg)
 }
+
+//default params
+const hello = (name: string = 'Stranger') => {
+    return `Hello ${name}`
+}
+
+
