@@ -1,4 +1,5 @@
 "use strict";
+console.log('TS Arrays');
 const numbers = [1, 2, 3];
 const activeUsers = ['Joe', 'Mave', 'Jane'];
 const students = [
@@ -12,3 +13,9 @@ const newEnrolee = {
     age: 13
 };
 students.push(newEnrolee);
+const board = [
+    ["X", "0", "X"],
+    ["0", "0", "X"],
+    ["X", "X", "0"]
+];
+console.log(board);

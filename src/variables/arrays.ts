@@ -1,5 +1,5 @@
 
-
+console.log('TS Arrays')
 const numbers: number[] = [1, 2, 3]
 
 const activeUsers: Array<string> = ['Joe', 'Mave', 'Jane']
@@ -25,3 +25,13 @@ const newEnrolee = {
 }
 
 students.push(newEnrolee)
+
+
+const board: string[][] = [
+    ["X", "0", "X"],
+    ["0", "0", "X"],
+    ["X", "X", "0"]
+]
+
+
+console.log(board)
