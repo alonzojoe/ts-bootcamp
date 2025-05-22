@@ -11,3 +11,26 @@ Start by cloning the project:
 git clone https://github.com/alonzojoe/ts-bootcamp.git
 cd ts-bootcamp
 ```
+
+### 2️⃣ Install Dependencies
+Run the following to install required packages:
+```bash
+npm install
+```
+
+### 3️⃣ Initialize TypeScript & Watch for Change
+Compile the project automatically on every file save:
+```bash
+npx tsc --watch
+```
+
+### 4️⃣ Start Live Server
+Run the live server to preview the project in your browser:
+```bash
+npx live-server
+```
+
+### Run the live server to preview the project in your browser:
+```bash
+http://127.0.0.1:5500/index.html
+```
