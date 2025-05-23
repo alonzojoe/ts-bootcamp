@@ -39,3 +39,29 @@ const getAnswer = (answer) => {
     return `The answer is ${answer}`;
 };
 const currentDay = "friday";
+//------------------
+// 1. Create a variable called highscore that can be a number or a boolean
+let highScore = 100;
+highScore = false;
+// 2. Create an array of items that can an aaray of numbers or string (cannot be and array of numbers and string mix together)
+const items = [1, 2, 3, 4,];
+const items2 = ["a", "b", "c", "d",];
+const arrColors = [
+    { r: 0, g: 0, b: 0 },
+    { h: 3, s: 5, l: 4 },
+];
+// 6. Write a function called greetings that accepts a single string or an array of strings,
+//It should print `Hello, <name>` for the single person Or greet each person in the array with the same format.
+const greetings = (name) => {
+    if (Array.isArray(name)) {
+        name.forEach((n) => {
+            console.log(`Hello, ${n}`);
+        });
+        return;
+    }
+    console.log(`Hello, ${name}`);
+};
+const namev1 = "Joe";
+const names = ["Joe", "Jane", "John"];
+greetings(namev1);
+greetings(names);
