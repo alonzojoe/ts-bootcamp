@@ -53,10 +53,6 @@ const song = {
     title: 'Ghost',
     artist: 'Justin Bieber'
 };
-const happyFace = {
-    radius: 5,
-    color: 'red'
-};
 const dune = {
     title: "Dune",
     originalTitle: "Dune Part One",

@@ -35,3 +35,17 @@ const board: string[][] = [
 
 
 console.log(board)
+
+
+interface Employee {
+    name: string;
+    age: number;
+}
+
+//type assertion
+let employee = <Employee>{}
+employee.name = "Test"
+employee.age = 45
+
+let code: any = 123
+code = <number>24

@@ -19,3 +19,9 @@ const board = [
     ["X", "X", "0"]
 ];
 console.log(board);
+//type assertion
+let employee = {};
+employee.name = "Test";
+employee.age = 45;
+let code = 123;
+code = 24;
