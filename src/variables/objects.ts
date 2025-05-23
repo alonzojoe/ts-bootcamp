@@ -109,34 +109,6 @@ const song: Song = {
 // song.artist = 'Eminem' //throws error due to readonly property
 
 
-//Intersection Type
-type Circle = {
-    radius: number;
-}
-
-type Colorful = {
-    color: string
-}
-
-type ColorfulCircle = Circle & Colorful
-
-const happyFace: ColorfulCircle = {
-    radius: 5,
-    color: 'red'
-}
-
-type Cat = {
-    numLives: number;
-}
-
-type Dog = {
-    breed: string;
-}
-
-type Hybrid = Cat & Dog & {
-    name: string;
-}
-
 
 //Nested
 type BoxOffice = {

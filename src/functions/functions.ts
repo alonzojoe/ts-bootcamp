@@ -31,7 +31,7 @@ const printMsg = (msg: string) => { //automaticallt infer void as return type
 
 
 //Never return type
-const neverStop = () => {
+const neverStop = (): never => {
     while (true) {
         console.log('value is always truthful')
     }
