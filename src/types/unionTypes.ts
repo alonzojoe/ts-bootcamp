@@ -37,3 +37,30 @@ const totalPrice = (price: number | string, qty: number) => {
     }
     return price * qty
 }
+
+
+//Union types with arrays
+const stuff: any[] = [1, 2, 3, true, false]
+
+type Administrator = {
+    email: string;
+    password: string
+}
+
+type Employer = {
+    company: string;
+    address: string;
+}
+
+const appUsers: (Administrator | Employer)[] = [
+    { email: "admin@example.com", password: "secure123" },
+    { company: "TechCorp", address: "123 Street, City" },
+];
+
+// let appUsers: Administrator[] | Employer[];
+// //Separate Type Arrays:
+// appUsers = [
+//     { email: "admin1@example.com", password: "adminpass" },
+//     { email: "admin2@example.com", password: "adminpass2" },
+//     { company: 'X', address: 'Y' }
+// ]; // ✅ Only Administrators here
