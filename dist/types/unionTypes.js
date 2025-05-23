@@ -33,3 +33,9 @@ const appUsers = [
 //     { email: "admin2@example.com", password: "adminpass2" },
 //     { company: 'X', address: 'Y' }
 // ]; // ✅ Only Administrators here
+//literal types
+let direction = "right";
+const getAnswer = (answer) => {
+    return `The answer is ${answer}`;
+};
+const currentDay = "friday";

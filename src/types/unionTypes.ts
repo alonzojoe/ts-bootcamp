@@ -64,3 +64,23 @@ const appUsers: (Administrator | Employer)[] = [
 //     { email: "admin2@example.com", password: "adminpass2" },
 //     { company: 'X', address: 'Y' }
 // ]; // ✅ Only Administrators here
+
+//literal types
+let direction: "up" | "down" | "right" = "right"
+
+
+const getAnswer = (answer: "yes" | "no" | "maybe") => {
+    return `The answer is ${answer}`
+}
+
+type DayOfWeek =
+    | "monday"
+    | "tuesday"
+    | "wednesday"
+    | "thursday"
+    | "friday"
+    | "saturday"
+    | "sunday";
+
+
+const currentDay: DayOfWeek = "friday"
