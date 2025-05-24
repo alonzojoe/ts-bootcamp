@@ -35,3 +35,35 @@ var HybridResesults;
     HybridResesults[HybridResesults["success"] = 200] = "success";
     HybridResesults["error"] = "error";
 })(HybridResesults || (HybridResesults = {}));
+//usecase
+const orderStatus = OrderStatus.PENDING;
+const isDelivered = (status) => {
+    return status === OrderStatus.DELIVERED;
+};
+const myOrder = isDelivered(OrderStatus.DELIVERED);
+var ArrowKeys;
+(function (ArrowKeys) {
+    ArrowKeys[ArrowKeys["UP"] = 0] = "UP";
+    ArrowKeys[ArrowKeys["DOWN"] = 1] = "DOWN";
+    ArrowKeys[ArrowKeys["LEFT"] = 2] = "LEFT";
+    ArrowKeys[ArrowKeys["RIGHT"] = 3] = "RIGHT";
+})(ArrowKeys || (ArrowKeys = {}));
+const handleArrowKeyPress = (key) => {
+    switch (key) {
+        case ArrowKeys.UP:
+            console.log('Moving Up!');
+            break;
+        case ArrowKeys.DOWN:
+            console.log('Moving Down!');
+            break;
+        case ArrowKeys.LEFT:
+            console.log('Moving Left!');
+            break;
+        case ArrowKeys.RIGHT:
+            console.log('Moving Right!');
+            break;
+        default:
+            console.log('Invalid key press!');
+    }
+};
+handleArrowKeyPress(ArrowKeys.DOWN);

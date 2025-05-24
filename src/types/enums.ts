@@ -36,3 +36,39 @@ enum HybridResesults {
 }
 
 
+//usecase
+const orderStatus = OrderStatus.PENDING
+
+const isDelivered = (status: OrderStatus) => {
+    return status === OrderStatus.DELIVERED
+}
+
+const myOrder = isDelivered(OrderStatus.DELIVERED)
+
+enum ArrowKeys {
+    UP,
+    DOWN,
+    LEFT,
+    RIGHT
+}
+
+const handleArrowKeyPress = (key: ArrowKeys) => {
+    switch (key) {
+        case ArrowKeys.UP:
+            console.log('Moving Up!')
+            break;
+        case ArrowKeys.DOWN:
+            console.log('Moving Down!')
+            break;
+        case ArrowKeys.LEFT:
+            console.log('Moving Left!')
+            break
+        case ArrowKeys.RIGHT:
+            console.log('Moving Right!')
+            break;
+        default:
+            console.log('Invalid key press!')
+    }
+}
+
+handleArrowKeyPress(ArrowKeys.DOWN)
