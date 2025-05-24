@@ -46,3 +46,17 @@ const shoes: Item = {
         return this.price - amount
     }
 }
+
+//interfce adding properties
+interface Client {
+    name: string;
+}
+
+interface Client { //valid
+    role: 2
+}
+
+const user2: Client = {
+    name: 'Candice',
+    role: 2
+}

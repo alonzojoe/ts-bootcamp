@@ -18,3 +18,7 @@ const shoes = {
         return this.price - amount;
     }
 };
+const user2 = {
+    name: 'Candice',
+    role: 2
+};
