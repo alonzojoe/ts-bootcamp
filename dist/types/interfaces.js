@@ -8,5 +8,6 @@ const formData = {
 const gta = {
     title: 'GTA V',
     ageBracket: "18+",
-    skill: "intermediate"
+    skill: "intermediate",
+    purchased: () => true
 };

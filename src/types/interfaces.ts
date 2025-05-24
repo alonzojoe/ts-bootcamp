@@ -13,16 +13,22 @@ const formData: UserForm = {
     address: '213 CA USA'
 }
 
+
+
+//adding methods
 type Skills = "beginner" | "intermediate" | "advanced" | "expert"
 
 interface Game {
     title: string;
     ageBracket: string;
     skill?: Skills;
+    purchased: () => boolean //method
 }
 
 const gta: Game = {
     title: 'GTA V',
     ageBracket: "18+",
-    skill: "intermediate"
+    skill: "intermediate",
+    purchased: () => true
 }
+
