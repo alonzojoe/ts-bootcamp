@@ -29,3 +29,9 @@ const kitty = {
         return "Meow meow";
     }
 };
+const juan = {
+    name: 'Juan',
+    id: 2423341,
+    email: 'delacruzjuan@gmail.com',
+    level: 'mid'
+};

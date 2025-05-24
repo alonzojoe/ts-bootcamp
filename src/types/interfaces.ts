@@ -68,7 +68,7 @@ interface Animal {
     breed: string
 }
 
-interface Kitten extends Animal { 
+interface Kitten extends Animal {
     meow(): string
 }
 
@@ -78,4 +78,24 @@ const kitty: Kitten = {
     meow() {
         return "Meow meow"
     }
-} 
+}
+
+interface Persona {
+    name: string;
+}
+
+interface CompanyEmployee {
+    readonly id: number;
+    email: string;
+}
+
+interface Engineer extends Persona, CompanyEmployee {
+    level: "junior" | "mid" | "senior "
+}
+
+const juan: Engineer = {
+    name: 'Juan',
+    id: 2423341,
+    email: 'delacruzjuan@gmail.com',
+    level: 'mid'
+}
