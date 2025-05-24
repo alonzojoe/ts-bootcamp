@@ -22,3 +22,10 @@ const user2 = {
     name: 'Candice',
     role: 2
 };
+const kitty = {
+    name: 'Kitty',
+    breed: "Persian",
+    meow() {
+        return "Meow meow";
+    }
+};

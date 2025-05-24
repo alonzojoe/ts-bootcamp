@@ -60,3 +60,22 @@ const user2: Client = {
     name: 'Candice',
     role: 2
 }
+
+//extending interfaces
+
+interface Animal {
+    name: string;
+    breed: string
+}
+
+interface Kitten extends Animal { 
+    meow(): string
+}
+
+const kitty: Kitten = {
+    name: 'Kitty',
+    breed: "Persian",
+    meow() {
+        return "Meow meow"
+    }
+} 
