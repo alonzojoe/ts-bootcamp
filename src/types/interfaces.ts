@@ -32,3 +32,17 @@ const gta: Game = {
     purchased: () => true
 }
 
+//methods w/params
+interface Item {
+    name: string;
+    price: number;
+    applyDiscount(amount: number): number;
+}
+
+const shoes: Item = {
+    name: 'Nike',
+    price: 100,
+    applyDiscount(amount: number) {
+        return this.price - amount
+    }
+}

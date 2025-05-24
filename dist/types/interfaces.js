@@ -11,3 +11,10 @@ const gta = {
     skill: "intermediate",
     purchased: () => true
 };
+const shoes = {
+    name: 'Nike',
+    price: 100,
+    applyDiscount(amount) {
+        return this.price - amount;
+    }
+};
