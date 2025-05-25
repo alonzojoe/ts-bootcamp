@@ -1,9 +1,9 @@
-const btn = document.querySelector('button') as HTMLButtonElement;
+const btn = document.getElementById('btn')! as HTMLButtonElement;
+const input = document.getElementById('todo-input')! as HTMLInputElement;
 
-if (btn) {
-    btn.style.background = 'red'
-    btn.style.color = '#fff '
-    btn.addEventListener('click', () => {
-        alert('you clicked the button')
-    })
-}
+
+
+btn.addEventListener('click', () => {
+    alert(input.value)
+    input.value = ""
+})
