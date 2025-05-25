@@ -7,8 +7,10 @@
     "typescript": "^5.8.3"
   },
   "scripts": {
+    "start": "npx live-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  
   "keywords": [],
   "author": "",
   "license": "ISC"
