@@ -99,3 +99,52 @@ const juan: Engineer = {
     email: 'delacruzjuan@gmail.com',
     level: 'mid'
 }
+
+
+// Type Alias - Can define objects, arrays, unions, and intersections
+type Person2 = {
+    name: string;
+    age: number;
+};
+
+// Type Alias with an array of objects
+type People = Person[];
+
+// Type Alias with union types
+type ID = number | string;
+
+// Type Alias with intersection using '&' to combine properties
+type Employee2 = Person2 & { role: string };
+
+const empJohn: Employee2 = {
+    name: "John Doe",
+    age: 23,
+    role: "Developer"
+};
+
+console.log(employee);
+
+// Interface - Limited to describing the structure of an object
+interface User2 {
+    username: string;
+    email: string;
+}
+
+// Interface with property re-declaration (can add more properties later)
+interface User2 {
+    isActive: boolean;
+}
+
+// Interface extending another interface using `extends`
+interface Admin extends User2 {
+    permissions: string[];
+}
+
+const administrator: Admin = {
+    username: "adminUser",
+    email: "admin@example.com",
+    isActive: true,
+    permissions: ["read", "write", "delete"]
+};
+
+console.log(administrator);

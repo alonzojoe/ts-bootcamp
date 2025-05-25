@@ -35,3 +35,16 @@ const juan = {
     email: 'delacruzjuan@gmail.com',
     level: 'mid'
 };
+const empJohn = {
+    name: "John Doe",
+    age: 23,
+    role: "Developer"
+};
+console.log(employee);
+const administrator = {
+    username: "adminUser",
+    email: "admin@example.com",
+    isActive: true,
+    permissions: ["read", "write", "delete"]
+};
+console.log(administrator);
