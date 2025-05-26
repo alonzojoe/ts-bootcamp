@@ -1,7 +1,14 @@
+interface Todo {
+    text: string;
+    completed: boolean;
+}
+
+const todos: Todo[] = []
+
 const btn = document.getElementById('btn')! as HTMLButtonElement;
 const input = document.getElementById('todo-input')! as HTMLInputElement;
 const form = document.querySelector('#form-action')! as HTMLFormElement;
-const ul = document.querySelector('.todo-list') as HTMLUListElement;
+const ul = document.querySelector('.todo-list')!;
 
 //button event listener `click`
 // btn.addEventListener('click', () => {
@@ -10,19 +17,34 @@ const ul = document.querySelector('.todo-list') as HTMLUListElement;
 //     input.value = ""
 // })
 
+const createTodoElement = (todo: Todo) => {
+    if (todo.text.trim() === "") return;
+
+    const newList = document.createElement('li')
+    const checkbox = document.createElement('input')
+    checkbox.type = "checkbox"
+
+    newList.append(todo.text)
+    newList.append(checkbox)
+    ul.append(newList)
+}
+
 const handleSubmit = (e: SubmitEvent) => { // or Event
     e.preventDefault();
 
-    const newTodo = input.value
-    if ((newTodo as string).trim() === "") return;
+    const newTodo: Todo = {
+        text: input.value,
+        completed: false
+    }
+    createTodoElement(newTodo)
+    todos.push(newTodo)
 
-    const newList = document.createElement('LI')
-    newList.append(newTodo)
-    ul.append(newList)
 
     input.value = ""
-
+    console.log('current todo', todos)
 }
+
+
 
 form.addEventListener('submit', handleSubmit)
 
