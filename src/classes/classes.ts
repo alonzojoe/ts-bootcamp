@@ -33,12 +33,27 @@ player1.score = 53
 class Tree {
     constructor(
         public name: string, //Parameter properties shorthand
-        private type: number //Parameter properties shorthand
+        private type: number, //Parameter properties shorthand
+        private _height: number
     ) { }
-    getInfo() {
-        console.log(`Tree name: ${this.name}, Type: ${this.type}`)
+
+    get info(): string {
+        return `Tree: ${this.name}, Type: ${this.type}`
+    }
+
+    get heightInMeter() {
+        return `${this.name} height: ${this._height} meters`
+    }
+
+    set height(value: number) {
+        if (value < 0) {
+            throw new Error(`Height cannot be negative`)
+        }
+        this._height = value
     }
 }
 
-const tree = new Tree('Oak', 1)
-tree.getInfo()
+const oakTree = new Tree('Oak', 1, 2.13)
+console.log(oakTree.info)
+oakTree.height = 1.9
+console.log(oakTree.heightInMeter)
