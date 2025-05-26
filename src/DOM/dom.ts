@@ -1,14 +1,17 @@
+const btn = document.getElementById('btn')! as HTMLButtonElement;
+const input = document.getElementById('todo-input')! as HTMLInputElement;
+const form = document.querySelector('#form-action')! as HTMLFormElement;
+const ul = document.querySelector('.todo-list')!;
+
 interface Todo {
     text: string;
     completed: boolean;
 }
 
 const todos: Todo[] = getTodos()
+todos.forEach(createTodoElement)
 
-const btn = document.getElementById('btn')! as HTMLButtonElement;
-const input = document.getElementById('todo-input')! as HTMLInputElement;
-const form = document.querySelector('#form-action')! as HTMLFormElement;
-const ul = document.querySelector('.todo-list')!;
+
 
 //button event listener `click`
 // btn.addEventListener('click', () => {
@@ -24,7 +27,7 @@ function getTodos(): Todo[] {
 
 console.log('current todos', todos)
 
-const createTodoElement = (todo: Todo) => {
+function createTodoElement(todo: Todo) {
     if (todo.text.trim() === "") return;
 
     const newList = document.createElement('li')

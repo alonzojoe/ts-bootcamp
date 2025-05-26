@@ -1,9 +1,10 @@
 "use strict";
-const todos = getTodos();
 const btn = document.getElementById('btn');
 const input = document.getElementById('todo-input');
 const form = document.querySelector('#form-action');
 const ul = document.querySelector('.todo-list');
+const todos = getTodos();
+todos.forEach(createTodoElement);
 //button event listener `click`
 // btn.addEventListener('click', () => {
 //     if (input.value === "") return;
@@ -17,7 +18,7 @@ function getTodos() {
     return JSON.parse(storedTodos);
 }
 console.log('current todos', todos);
-const createTodoElement = (todo) => {
+function createTodoElement(todo) {
     if (todo.text.trim() === "")
         return;
     const newList = document.createElement('li');
@@ -26,7 +27,7 @@ const createTodoElement = (todo) => {
     newList.append(todo.text);
     newList.append(checkbox);
     ul.append(newList);
-};
+}
 const handleSubmit = (e) => {
     e.preventDefault();
     const newTodo = {
