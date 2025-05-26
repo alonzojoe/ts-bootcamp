@@ -11,6 +11,7 @@ class Player {
     constructor(first: string, last: string) {
         this.first = first
         this.last = last
+        this.getLives()
     }
     getName() {
         console.log(`Player name is: ${this.first} ${this.last}`)
@@ -18,9 +19,13 @@ class Player {
     taunt() {
         console.log('You are a terrible player!')
     }
+    private getLives() {
+        console.log(`Number of lives: ${this.numOfLives}`)
+    }
 }
 
 const player1 = new Player('John', 'Doe')
 player1.taunt()
 player1.getName()
 player1.score = 53
+
