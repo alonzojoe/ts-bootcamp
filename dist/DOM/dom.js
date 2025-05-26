@@ -18,12 +18,20 @@ function getTodos() {
     return JSON.parse(storedTodos);
 }
 console.log('current todos', todos);
+const saveTodos = () => {
+    localStorage.setItem('app-todos', JSON.stringify(todos));
+};
 function createTodoElement(todo) {
     if (todo.text.trim() === "")
         return;
     const newList = document.createElement('li');
     const checkbox = document.createElement('input');
     checkbox.type = "checkbox";
+    checkbox.checked = todo.completed;
+    checkbox.addEventListener('change', () => {
+        todo.completed = checkbox.checked;
+        saveTodos();
+    });
     newList.append(todo.text);
     newList.append(checkbox);
     ul.append(newList);
@@ -37,7 +45,7 @@ const handleSubmit = (e) => {
     createTodoElement(newTodo);
     todos.push(newTodo);
     input.value = "";
-    localStorage.setItem('app-todos', JSON.stringify(todos));
+    saveTodos();
     console.log('current todo', todos);
 };
 form.addEventListener('submit', handleSubmit);
