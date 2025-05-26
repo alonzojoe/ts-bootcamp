@@ -1,5 +1,5 @@
 "use strict";
-const todos = [];
+const todos = getTodos();
 const btn = document.getElementById('btn');
 const input = document.getElementById('todo-input');
 const form = document.querySelector('#form-action');
@@ -10,6 +10,13 @@ const ul = document.querySelector('.todo-list');
 //     alert(input.value)
 //     input.value = ""
 // })
+function getTodos() {
+    const storedTodos = localStorage.getItem('app-todos');
+    if (storedTodos === null)
+        return [];
+    return JSON.parse(storedTodos);
+}
+console.log('current todos', todos);
 const createTodoElement = (todo) => {
     if (todo.text.trim() === "")
         return;
@@ -29,6 +36,7 @@ const handleSubmit = (e) => {
     createTodoElement(newTodo);
     todos.push(newTodo);
     input.value = "";
+    localStorage.setItem('app-todos', JSON.stringify(todos));
     console.log('current todo', todos);
 };
 form.addEventListener('submit', handleSubmit);

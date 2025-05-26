@@ -3,7 +3,7 @@ interface Todo {
     completed: boolean;
 }
 
-const todos: Todo[] = []
+const todos: Todo[] = getTodos()
 
 const btn = document.getElementById('btn')! as HTMLButtonElement;
 const input = document.getElementById('todo-input')! as HTMLInputElement;
@@ -16,6 +16,13 @@ const ul = document.querySelector('.todo-list')!;
 //     alert(input.value)
 //     input.value = ""
 // })
+function getTodos(): Todo[] {
+    const storedTodos = localStorage.getItem('app-todos')
+    if (storedTodos === null) return []
+    return JSON.parse(storedTodos)
+}
+
+console.log('current todos', todos)
 
 const createTodoElement = (todo: Todo) => {
     if (todo.text.trim() === "") return;
@@ -41,6 +48,7 @@ const handleSubmit = (e: SubmitEvent) => { // or Event
 
 
     input.value = ""
+    localStorage.setItem('app-todos', JSON.stringify(todos))
     console.log('current todo', todos)
 }
 
