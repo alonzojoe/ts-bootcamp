@@ -64,3 +64,28 @@ const oakTree = new Tree('Oak', 1, 2.13)
 console.log(oakTree.info)
 oakTree.height = 1.9
 console.log(oakTree.heightInMeter)
+
+//Classes and Interface
+
+interface Color {
+    color: string
+}
+
+interface Printable {
+    print(): void
+}
+
+class Bike implements Color {
+    constructor(public color: string) { }
+}
+
+class Jacket implements Color, Printable {
+    constructor(public brand: string, public color: string) { }
+    print(): void {
+        console.log(`${this.color} ${this.brand} jacket`)
+    }
+}
+
+const redBike = new Bike('red')
+const blueJacket = new Jacket('Nike', 'blue')
+blueJacket.print()
