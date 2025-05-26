@@ -1,20 +1,32 @@
 const btn = document.getElementById('btn')! as HTMLButtonElement;
 const input = document.getElementById('todo-input')! as HTMLInputElement;
 const form = document.querySelector('#form-action')! as HTMLFormElement;
+const ul = document.querySelector('.todo-list') as HTMLUListElement;
 
-//button event listener
+//button event listener `click`
 // btn.addEventListener('click', () => {
 //     if (input.value === "") return;
 //     alert(input.value)
 //     input.value = ""
 // })
 
-const handleSubmit = (e: SubmitEvent) => {
+const handleSubmit = (e: SubmitEvent) => { // or Event
     e.preventDefault();
-    alert('form subbmited')
+
+    const newTodo = input.value
+    if ((newTodo as string).trim() === "") return;
+
+    const newList = document.createElement('LI')
+    newList.append(newTodo)
+    ul.append(newList)
+
+    input.value = ""
+
 }
 
 form.addEventListener('submit', handleSubmit)
+
+console.log('ul', ul)
 
 let mystery: unknown = "5213"
 
