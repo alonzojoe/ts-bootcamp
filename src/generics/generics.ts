@@ -44,7 +44,7 @@ const books: Book[] = [
 console.log('random book', genRandomElement(books))
 
 //generics with multiple types
-const mergeObjects = <T, K>(object1: T, object2: K): T & K => {
+const mergeObjects = <T extends object, K extends object>(object1: T, object2: K): T & K => {
     return {
         ...object1,
         ...object2
@@ -55,3 +55,47 @@ const mergeObjects = <T, K>(object1: T, object2: K): T & K => {
 const mergePerson = mergeObjects({ id: 1 }, { name: 'John Doe', email: 'johndoe@gmail.com' })
 
 console.log('merged', mergePerson)
+
+interface Length {
+    length: number
+}
+
+const printDoubleLenght = <T extends Length>(thing: T) => {
+    return thing.length * 2
+}
+
+printDoubleLenght({ length: 5 })
+
+//Generic Type with default parameter
+const makeEmptyArray = <T = number>(): T[] => {
+    return []
+}
+
+const emptyNumbers = makeEmptyArray()
+const emptyStrings = makeEmptyArray<string>()
+
+
+//Generics w/ Classes
+interface SongItem {
+    title: string;
+    artists: string
+}
+
+interface Video {
+    title: string;
+    creator: string
+}
+
+class Playlist<T> {
+    public queue: T[] = []
+    addSong(song: T) {
+        this.queue.push(song)
+        console.log(this.queue)
+    }
+}
+
+const songPlaylist = new Playlist<SongItem>()
+songPlaylist.addSong({ title: 'Hotel of California', artists: 'Eagles' })
+
+const videoPlaylist = new Playlist<Video>()
+videoPlaylist.addSong({ title: 'Supreme Rules', creator: 'Tyler the creator' })
