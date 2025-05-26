@@ -3,9 +3,10 @@
 console.log('Classes')
 
 class Player {
-    first: string;
-    last: string;
-    score: number = 0;
+    public readonly first: string;
+    public readonly last: string;
+    public score: number = 0;
+    private numOfLives: number = 100;
 
     constructor(first: string, last: string) {
         this.first = first
@@ -22,3 +23,4 @@ class Player {
 const player1 = new Player('John', 'Doe')
 player1.taunt()
 player1.getName()
+player1.score = 53
