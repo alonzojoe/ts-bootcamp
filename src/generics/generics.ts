@@ -9,3 +9,36 @@ const inputEl = document.querySelector<HTMLInputElement>('#inputEl')
 
 console.log(inputEl?.value)
 
+const identity = <T,>(item: T): T => {
+    return item
+}
+
+identity<number>(7)
+identity<string>('Hello')
+identity<boolean>(true)
+
+const genRandomElement = <T,>(list: T[]): T => {
+    const randomIndex = Math.floor(Math.random() * list.length)
+    return list[randomIndex]
+}
+
+const arrNumber = [1, 2, 3, 4, 5]
+
+console.log('random number', genRandomElement(arrNumber))
+
+const arrString = ['a', 'b', 'c', 'd', 'e']
+
+console.log('random string', genRandomElement(arrString))
+
+interface Book {
+    id: number,
+    title: string
+}
+
+const books: Book[] = [
+    { id: 1, title: 'Toy Story' },
+    { id: 2, title: 'Finding Nemo' },
+    { id: 3, title: 'Bad Piggies' }
+]
+
+console.log('random book', genRandomElement(books))
