@@ -6,10 +6,12 @@
     <title>Typescript</title>
   </head>
   <body>
-    <div>
-      <input type="text" id="todo-input" />
-      <button id="btn">Add Todo</button>
-    </div>
+    <form id="form-action">
+      <input type="text" id="todo-input" placeholder="Enter a todo" />
+      <button type="submit" id="btn">Add Todo</button>
+    </form>
+    <ul class="todo-list"></ul>
     <script src="/dist/DOM/dom.js"></script>
+    <script src="/dist/classes/classes.js"></script>
   </body>
 </html>

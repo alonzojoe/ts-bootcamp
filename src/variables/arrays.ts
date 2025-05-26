@@ -20,7 +20,7 @@ const students: User[] = [
 
 const newEnrolee = {
     id: 4,
-    name: 'Voo',
+name: 'Voo',
     age: 13
 }
 
