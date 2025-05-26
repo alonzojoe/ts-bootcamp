@@ -34,7 +34,7 @@ class Tree {
     constructor(
         public name: string, //Parameter properties shorthand
         private type: number, //Parameter properties shorthand
-        private _height: number
+        protected _height: number //Protected is only accessible in child classes unlike public which is accessible anywhere
     ) { }
 
     get info(): string {
@@ -50,6 +50,13 @@ class Tree {
             throw new Error(`Height cannot be negative`)
         }
         this._height = value
+    }
+}
+
+class SuperTree extends Tree {
+    public hybrid: boolean = true;
+    resetHeight() {
+        this._height = 0
     }
 }
 
