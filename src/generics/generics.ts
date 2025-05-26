@@ -42,3 +42,16 @@ const books: Book[] = [
 ]
 
 console.log('random book', genRandomElement(books))
+
+//generics with multiple types
+const mergeObjects = <T, K>(object1: T, object2: K): T & K => {
+    return {
+        ...object1,
+        ...object2
+    }
+
+}
+
+const mergePerson = mergeObjects({ id: 1 }, { name: 'John Doe', email: 'johndoe@gmail.com' })
+
+console.log('merged', mergePerson)
