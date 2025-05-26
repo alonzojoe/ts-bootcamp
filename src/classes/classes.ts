@@ -89,3 +89,36 @@ class Jacket implements Color, Printable {
 const redBike = new Bike('red')
 const blueJacket = new Jacket('Nike', 'blue')
 blueJacket.print()
+
+//Abstract class
+abstract class Emp {
+    constructor(public first: string, public last: string) { }
+    abstract getPay(): number
+    greet() {
+        console.log(`Hello, ${this.first} ${this.last}`)
+    }
+}
+
+class FullTimeEmp extends Emp {
+    constructor(first: string, last: string, private salary: number) {
+        super(first, last)
+    }
+    getPay(): number {
+        return this.salary
+    }
+}
+
+class PartTimeEmp extends Emp {
+    constructor(first: string, last: string, private hourlyRate: number, private hoursWorked: number) {
+        super(first, last)
+    }
+    getPay(): number {
+        return this.hourlyRate * this.hoursWorked
+    }
+}
+
+const fullTimeEmp = new FullTimeEmp('Jane', 'Doe', 20000)
+const partTimeEmp = new PartTimeEmp('Cara', 'Doe', 20, 200)
+console.log('full time', fullTimeEmp.getPay())
+console.log('part time', partTimeEmp.getPay())
+// new Employee()
