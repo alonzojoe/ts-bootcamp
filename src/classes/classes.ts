@@ -29,3 +29,16 @@ player1.taunt()
 player1.getName()
 player1.score = 53
 
+
+class Tree {
+    constructor(
+        public name: string, //Parameter properties shorthand
+        private type: number //Parameter properties shorthand
+    ) { }
+    getInfo() {
+        console.log(`Tree name: ${this.name}, Type: ${this.type}`)
+    }
+}
+
+const tree = new Tree('Oak', 1)
+tree.getInfo()
