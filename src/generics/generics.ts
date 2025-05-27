@@ -15,7 +15,7 @@ const identity = <T,>(item: T): T => {
 
 identity<number>(7)
 identity<string>('Hello')
-identity<boolean>(true)
+identity(true) // auto inter to boolean
 
 const genRandomElement = <T,>(list: T[]): T => {
     const randomIndex = Math.floor(Math.random() * list.length)
@@ -43,6 +43,14 @@ const books: Book[] = [
 
 console.log('random book', genRandomElement(books))
 
+const convertArray = <T,>(item: T): T[] => {
+    return [item]
+}
+
+const newArr = convertArray(true)
+
+console.log('convert array', newArr)
+
 //generics with multiple types
 const mergeObjects = <T extends object, K extends object>(object1: T, object2: K): T & K => {
     return {
@@ -56,6 +64,7 @@ const mergePerson = mergeObjects({ id: 1 }, { name: 'John Doe', email: 'johndoe@
 
 console.log('merged', mergePerson)
 
+//Generic Contstraints
 interface Length {
     length: number
 }
@@ -74,6 +83,36 @@ const makeEmptyArray = <T = number>(): T[] => {
 const emptyNumbers = makeEmptyArray()
 const emptyStrings = makeEmptyArray<string>()
 
+interface ResponseData<T = boolean> {
+    success: T;
+}
+
+const defaultResponse: ResponseData = { success: true }; // Uses default: boolean
+const stringResponse: ResponseData<string> = { success: "OK" }; // Overrides: string
+
+//Generic Interface
+interface Box<T> {
+    content: T;
+}
+
+const stringBox: Box<string> = { content: "Generics are fun!" };
+const numberBox: Box<number> = { content: 100 };
+
+interface ItemB {
+    name: string;
+    price?: number;
+}
+
+interface BoxB<T> {
+    content: T[];
+}
+
+const itemBox: BoxB<ItemB> = {
+    content: [
+        { name: "Laptop", price: 1500 },
+        { name: "Phone" },
+    ],
+};
 
 //Generics w/ Classes
 interface SongItem {
