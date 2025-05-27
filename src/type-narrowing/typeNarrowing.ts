@@ -32,5 +32,14 @@ if (el) {
 }
 
 
+//Equality Narrowing
+type StringNum = string | number
+type StringBool = string | boolean
+const demoFunction = (x: StringNum, y: StringBool) => {
+    if (x === y) {
+        return x.toUpperCase()
+    }
+}
 
+console.log(demoFunction('a', 'a'))
 
