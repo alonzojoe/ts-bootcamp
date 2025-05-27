@@ -103,3 +103,86 @@ const printDate = (date: Date | string) => {
         console.log(new Date(date).toUTCString())
     }
 }
+
+//Type Predicates
+interface Male {
+    name: string;
+    salary: number;
+}
+
+interface Female {
+    name: string;
+    age: number
+}
+
+const isMale = (person: Male | Female): person is Male => { //type predicate using syntax parameterName is Type
+    return (person as Male).salary !== undefined
+}
+
+const getIdentity = (person: Male | Female): string => {
+    if (isMale(person)) {
+        person
+        return "I'm male"
+    } else {
+        person
+        return "I'm a female"
+    }
+}
+
+//Discriminated Unions
+interface Rooster {
+    name: string;
+    weight: number;
+    age: number;
+    kind: "rooster";
+}
+
+interface Cow {
+    name: string;
+    weight: number;
+    age: number;
+    kind: "cow";
+}
+
+interface Pig {
+    name: string;
+    weight: number;
+    age: number;
+    kind: "pig"
+}
+
+type FarmAnimal = Rooster | Cow | Pig
+
+const getAnimalSound = (animal: FarmAnimal) => {
+    switch (animal.kind) {
+        case ("pig"):
+            return "Oink!"
+        case ("cow"):
+            return "Moo!"
+        case ("rooster"):
+            return "Oink Oink"
+            break;
+        default:
+            break;
+    }
+}
+
+type SuccessResponse = { status: "success"; data: string };
+type ErrorResponse = { status: "error"; errorMessage: string };
+//status acts as discriminator 
+
+type ApiResponse = SuccessResponse | ErrorResponse;
+
+function handleResponse(response: ApiResponse) {
+    if (response.status === "success") {
+        console.log(`✅ Data: ${response.data}`);
+    } else {
+        console.log(`❌ Error: ${response.errorMessage}`);
+    }
+}
+
+const success: SuccessResponse = { status: "success", data: "User found" };
+const error: ErrorResponse = { status: "error", errorMessage: "User not found" };
+
+handleResponse(success); // ✅ Data: User found
+handleResponse(error); // ❌ Error: User not found
