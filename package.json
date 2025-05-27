@@ -10,8 +10,10 @@
     "start": "npx live-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.9.0"
+  }
 }
