@@ -1,4 +1,6 @@
 import axios from "axios"
+import _ from "lodash"
+
 console.clear()
 console.log('Type Declaration')
 
