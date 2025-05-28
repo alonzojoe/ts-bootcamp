@@ -5,7 +5,7 @@ console.clear()
 console.log('Type Declaration')
 
 
-const API_ENDPOINT = `https://jsonplaceholdessr.typicode.com`
+const API_ENDPOINT = `https://jsonplaceholder.typicode.com`
 
 interface APITodo {
     userId: number;
