@@ -36,3 +36,4 @@ const throwError = (msg) => {
 const hello = (name = 'Stranger') => {
     return `Hello ${name}`;
 };
+//# sourceMappingURL=functions.js.map

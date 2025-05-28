@@ -7,3 +7,4 @@ const fastTriangle = {
     speed: 10,
     sides: 3
 };
+//# sourceMappingURL=intersectionTypes.js.map

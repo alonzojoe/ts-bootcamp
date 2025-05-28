@@ -4,11 +4,16 @@
   "description": "This is a TypeScript project, following best practices for setting up a structured and scalable development environment. It includes TypeScript compilation, live server integration, automatic code watching, and proper file organization to ensure efficient coding workflows. This setup helps developers write safer and more maintainable JavaScript, leveraging TypeScript's static typing and improved tooling.",
   "main": "index.js",
   "devDependencies": {
-    "typescript": "^5.8.3"
+    "@types/lodash": "^4.17.17",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.3",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1"
   },
   "scripts": {
     "start": "npx live-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",

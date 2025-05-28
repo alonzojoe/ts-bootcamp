@@ -31,3 +31,4 @@ for (let movie of movies) {
 // foundMovie(); throw error since ou cast movie to string
 // foundMovie = 1; throw error since ou cast movie to string
 // foundMovie.move() throw error since ou cast movie to string
+//# sourceMappingURL=variables.js.map

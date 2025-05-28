@@ -65,3 +65,4 @@ const namev1 = "Joe";
 const names = ["Joe", "Jane", "John"];
 greetings(namev1);
 greetings(names);
+//# sourceMappingURL=unionTypes.js.map

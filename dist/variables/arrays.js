@@ -25,3 +25,4 @@ employee.name = "Test";
 employee.age = 45;
 let code = 123;
 code = 24;
+//# sourceMappingURL=arrays.js.map

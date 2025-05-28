@@ -52,3 +52,4 @@ form.addEventListener('submit', handleSubmit);
 console.log('ul', ul);
 let mystery = "5213";
 const numChars = mystery.length;
+//# sourceMappingURL=dom.js.map
