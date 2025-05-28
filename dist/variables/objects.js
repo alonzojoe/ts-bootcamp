@@ -82,3 +82,4 @@ const getProfit = (selectedMovie) => {
     return grossWorldwide - budget;
 };
 getProfit(cats);
+//# sourceMappingURL=objects.js.map

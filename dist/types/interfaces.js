@@ -48,3 +48,4 @@ const administrator = {
     permissions: ["read", "write", "delete"]
 };
 console.log(administrator);
+//# sourceMappingURL=interfaces.js.map
