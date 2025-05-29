@@ -1,4 +1,5 @@
 const path = require("path");
+const CleanWebpackPlugin = require("");
 
 module.exports = {
   mode: "production",
