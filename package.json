@@ -5,15 +5,18 @@
   "main": "index.js",
   "devDependencies": {
     "@types/lodash": "^4.17.17",
+    "clean-webpack-plugin": "^4.0.0",
     "ts-loader": "^9.5.2",
     "typescript": "^5.8.3",
     "webpack": "^5.99.9",
-    "webpack-cli": "^6.0.1"
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.1"
   },
   "scripts": {
+    "serve": "webpack-dev-server --config webpack.dev.js",
     "start": "npx live-server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
