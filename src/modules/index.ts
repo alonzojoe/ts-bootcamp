@@ -67,3 +67,21 @@ const groupByProperty = <T, K extends keyof T>(arr: T[], property: K) => {
 
 console.log('array reduce, group by age')
 console.log(groupByProperty(students, 'age'))
+
+type Person = Omit<Student, "id">
+
+const persons: Person[] = [
+    { name: 'Bob', age: 25 },
+    { name: 'Marley', age: 26 },
+]
+
+const transformedObject = <T, U>(items: T[], transform: (item: T) => U): U[] => {
+    return items.map(transform)
+}
+
+const transformedPeople = transformedObject(persons, (person) => ({
+    fullName: person.name,
+    currentAge: person.age
+}))
+
+console.log('transform object', transformedPeople)
