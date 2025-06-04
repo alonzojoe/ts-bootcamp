@@ -146,3 +146,18 @@ const convertArrayToObjectByProperty = <T, K extends keyof T>(arr: T[], property
 }
 
 console.log('convert array to objects by property', convertArrayToObjectByProperty(studs, 'id'))
+
+//Filter Objects Based on Multiple Conditions
+const usersv2 = [
+    { id: 1, name: 'John', role: 'Client', age: 30 },
+    { id: 2, name: 'Jane', role: 'Admin', age: 25 },
+    { id: 3, name: 'Jude', role: 'Client', age: 40 },
+    { id: 4, name: 'Mike', role: 'Admin', age: 35 },
+];
+
+const filterByConditions = <T>(arr: T[], filter: (item: T) => boolean) => {
+    return arr.filter(filter);
+}
+const filteredByConditions = filterByConditions(usersv2, (user) => user.role === 'Admin' && user.age > 36)
+
+console.log(`Filter object with mutiple conditions`, filteredByConditions)
