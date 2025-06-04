@@ -104,10 +104,20 @@ const filterAndTransform = <T, U>(items: T[], filter: (item: T) => boolean, tran
 const filterandTransformProducts = filterAndTransform(products,
     (item) => item.price > 500,
     (item) => ({
-        gadetId: item.id,
+        gadgetId: item.id,
         gadgetName: item.name,
-        gandetPrice: item.price
+        gadgetPrice: item.price
     })
 )
 
 console.log('filter and transform gadgets', filterandTransformProducts)
+
+const nestedArray = [1, [2, [3, [4, 5]], 6], 7];
+
+const flattenDeep = <T>(items: any[]): T[] => {
+    return items.reduce<T[]>((acc, curr) => {
+        return Array.isArray(curr) ? acc.concat(flattenDeep(curr)) : acc.concat(curr);
+    }, []);
+};
+
+console.log('Flattened:', flattenDeep(nestedArray));
