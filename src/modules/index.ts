@@ -85,3 +85,29 @@ const transformedPeople = transformedObject(persons, (person) => ({
 }))
 
 console.log('transform object', transformedPeople)
+
+type Gadget = Pick<Student, "id" | "name"> & {
+    price: number
+}
+
+const products: Gadget[] = [
+    { id: 1, name: 'Laptop', price: 1000 },
+    { id: 2, name: 'Phone', price: 700 },
+    { id: 3, name: 'Tablet', price: 500 },
+    { id: 4, name: 'Monitor', price: 300 }
+];
+
+const filterAndTransform = <T, U>(items: T[], filter: (item: T) => boolean, transform: (item: T) => U): U[] => {
+    return items.filter(filter).map(transform)
+}
+
+const filterandTransformProducts = filterAndTransform(products,
+    (item) => item.price > 500,
+    (item) => ({
+        gadetId: item.id,
+        gadgetName: item.name,
+        gandetPrice: item.price
+    })
+)
+
+console.log('filter and transform gadgets', filterandTransformProducts)
