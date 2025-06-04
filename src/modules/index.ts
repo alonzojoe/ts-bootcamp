@@ -112,6 +112,15 @@ const filterandTransformProducts = filterAndTransform(products,
 
 console.log('filter and transform gadgets', filterandTransformProducts)
 
+const nestedFirstLevelArray = [1, [2], [4], [6], [0], 1]
+
+
+const flatArray = <T>(items: T[]): T[] => {
+    return items.reduce<T[]>((group, curr) => group.concat(curr), [])
+}
+
+console.log('flat array 1 level: ', flatArray(nestedFirstLevelArray))
+
 const nestedArray = [1, [2, [3, [4, 5]], 6], 7];
 
 const flattenDeep = <T>(items: any[]): T[] => {
@@ -120,4 +129,20 @@ const flattenDeep = <T>(items: any[]): T[] => {
     }, []);
 };
 
-console.log('Flattened:', flattenDeep(nestedArray));
+console.log('Flattened Deep:', flattenDeep(nestedArray));
+
+const studs = [
+    { id: 1, name: 'Mae', age: 23 },
+    { id: 2, name: 'Jane', age: 24 },
+    { id: 3, name: 'Lal', age: 22 },
+];
+
+const convertArrayToObjectByProperty = <T, K extends keyof T>(arr: T[], property: K) => {
+    return arr.reduce((group, curr) => {
+        const key = curr[property] as string
+        group[key] = curr;
+        return group
+    }, {} as Record<string, T>)
+}
+
+console.log('convert array to objects by property', convertArrayToObjectByProperty(studs, 'id'))
