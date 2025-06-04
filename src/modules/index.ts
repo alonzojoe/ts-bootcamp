@@ -85,3 +85,79 @@ const transformedPeople = transformedObject(persons, (person) => ({
 }))
 
 console.log('transform object', transformedPeople)
+
+type Gadget = Pick<Student, "id" | "name"> & {
+    price: number
+}
+
+const products: Gadget[] = [
+    { id: 1, name: 'Laptop', price: 1000 },
+    { id: 2, name: 'Phone', price: 700 },
+    { id: 3, name: 'Tablet', price: 500 },
+    { id: 4, name: 'Monitor', price: 300 }
+];
+
+const filterAndTransform = <T, U>(items: T[], filter: (item: T) => boolean, transform: (item: T) => U): U[] => {
+    return items.filter(filter).map(transform)
+}
+
+const filterandTransformProducts = filterAndTransform(products,
+    (item) => item.price > 500,
+    (item) => ({
+        gadgetId: item.id,
+        gadgetName: item.name,
+        gadgetPrice: item.price
+    })
+)
+
+console.log('filter and transform gadgets', filterandTransformProducts)
+
+const nestedFirstLevelArray = [1, [2], [4], [6], [0], 1]
+
+
+const flatArray = <T>(items: T[]): T[] => {
+    return items.reduce<T[]>((group, curr) => group.concat(curr), [])
+}
+
+console.log('flat array 1 level: ', flatArray(nestedFirstLevelArray))
+
+const nestedArray = [1, [2, [3, [4, 5]], 6], 7];
+
+const flattenDeep = <T>(items: any[]): T[] => {
+    return items.reduce<T[]>((acc, curr) => {
+        return Array.isArray(curr) ? acc.concat(flattenDeep(curr)) : acc.concat(curr);
+    }, []);
+};
+
+console.log('Flattened Deep:', flattenDeep(nestedArray));
+
+const studs = [
+    { id: 1, name: 'Mae', age: 23 },
+    { id: 2, name: 'Jane', age: 24 },
+    { id: 3, name: 'Lal', age: 22 },
+];
+
+const convertArrayToObjectByProperty = <T, K extends keyof T>(arr: T[], property: K) => {
+    return arr.reduce((group, curr) => {
+        const key = curr[property] as string
+        group[key] = curr;
+        return group
+    }, {} as Record<string, T>)
+}
+
+console.log('convert array to objects by property', convertArrayToObjectByProperty(studs, 'id'))
+
+//Filter Objects Based on Multiple Conditions
+const usersv2 = [
+    { id: 1, name: 'John', role: 'Client', age: 30 },
+    { id: 2, name: 'Jane', role: 'Admin', age: 25 },
+    { id: 3, name: 'Jude', role: 'Client', age: 40 },
+    { id: 4, name: 'Mike', role: 'Admin', age: 35 },
+];
+
+const filterByConditions = <T>(arr: T[], filter: (item: T) => boolean) => {
+    return arr.filter(filter);
+}
+const filteredByConditions = filterByConditions(usersv2, (user) => user.role === 'Admin' && user.age > 36)
+
+console.log(`Filter object with mutiple conditions`, filteredByConditions)
